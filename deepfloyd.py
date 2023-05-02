@@ -1,7 +1,9 @@
 # huggingface login
+import os
 from huggingface_hub import login
 
-login("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", True)
+token = os.getenv('TOKEN')
+login(token, True)
 
 # load textencorder in 8bit quantized
 from transformers import T5EncoderModel, BitsAndBytesConfig
@@ -39,9 +41,9 @@ while(True):
         "DeepFloyd/IF-I-XL-v1.0",
         subfolder="text_encoder", 
         device_map="auto", 
-        load_in_8bit=True,
+        load_in_8bit=False,
         quantization_config=quantization_config,
-        #variant="int8",
+        variant="fp16",
         torch_dtype=torch.float16
     )
     print("finish!")

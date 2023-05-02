@@ -16,7 +16,7 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 Install requirements:
 ```
-pip3 install --upgrade diffuser transformers safetensors sentencepiece accelerate bitsandbytes torch torchvision
+pip3 install --upgrade diffusers diffuser transformers safetensors sentencepiece accelerate bitsandbytes torch torchvision click protobuf six
 ```
 
 Run:
